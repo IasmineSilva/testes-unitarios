@@ -1,0 +1,54 @@
+@JornadaMilhas.API_HostAddress = https://localhost:51413
+
+### Endpoint de Autenticação
+POST {{JornadaMilhas.API_HostAddress}}/auth-login
+Content-Type: application/json
+
+{
+  "email": "email",
+  "password": "password"
+}
+
+### Nova oferta de viagem
+POST {{JornadaMilhas.API_HostAddress}}/ofertas-viagem
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImRhbmllbEBleGFtcGxlLm9yZyIsImFsdXJhIjoiYyMiLCJqdGkiOiJkYzNlYmU4ZC0xNzBkLTQ0ZDAtODFiOC1mNDdmYjBjY2NiYTgiLCJleHAiOjE3MDY1ODAzMDYsImlzcyI6ImFsdXJhX2lzc3VlciIsImF1ZCI6ImFsdXJhX3Rlc3Rlc19DIyJ9.McfNidchVAEwEH92Gwteths_OSuQNv93dzdD90Tt1cI
+
+{
+  "rota": {
+    "origem": "Rio",
+    "destino": "Brasília"
+  },
+  "periodo": {
+    "dataInicio": "2024-01-10T14:30:00.000",
+    "dataFinal": "2024-01-30T14:30:00.000"
+  },
+  "preco": 2400.13
+}
+
+### Lista de Ofertas com token JWT
+GET {{JornadaMilhas.API_HostAddress}}/ofertas-viagem/
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImRhbmllbEBleGFtcGxlLm9yZyIsImFsdXJhIjoiYyMiLCJqdGkiOiJkYzNlYmU4ZC0xNzBkLTQ0ZDAtODFiOC1mNDdmYjBjY2NiYTgiLCJleHAiOjE3MDY1ODAzMDYsImlzcyI6ImFsdXJhX2lzc3VlciIsImF1ZCI6ImFsdXJhX3Rlc3Rlc19DIyJ9.McfNidchVAEwEH92Gwteths_OSuQNv93dzdD90Tt1cI
+
+### Excluir uma oferta de viagem
+DELETE {{JornadaMilhas.API_HostAddress}}/ofertas-viagem/2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImRhbmllbEBleGFtcGxlLm9yZyIsImFsdXJhIjoiYyMiLCJqdGkiOiJkYzNlYmU4ZC0xNzBkLTQ0ZDAtODFiOC1mNDdmYjBjY2NiYTgiLCJleHAiOjE3MDY1ODAzMDYsImlzcyI6ImFsdXJhX2lzc3VlciIsImF1ZCI6ImFsdXJhX3Rlc3Rlc19DIyJ9.McfNidchVAEwEH92Gwteths_OSuQNv93dzdD90Tt1cI
+
+### Recuperar uma oferta por seu identificador
+GET {{JornadaMilhas.API_HostAddress}}/ofertas-viagem/3
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImRhbmllbEBleGFtcGxlLm9yZyIsImFsdXJhIjoiYyMiLCJqdGkiOiJkYzNlYmU4ZC0xNzBkLTQ0ZDAtODFiOC1mNDdmYjBjY2NiYTgiLCJleHAiOjE3MDY1ODAzMDYsImlzcyI6ImFsdXJhX2lzc3VlciIsImF1ZCI6ImFsdXJhX3Rlc3Rlc19DIyJ9.McfNidchVAEwEH92Gwteths_OSuQNv93dzdD90Tt1cI
+
+### Atualizar uma oferta
+PUT {{JornadaMilhas.API_HostAddress}}/ofertas-viagem
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImRhbmllbEBleGFtcGxlLm9yZyIsImFsdXJhIjoiYyMiLCJqdGkiOiJkYzNlYmU4ZC0xNzBkLTQ0ZDAtODFiOC1mNDdmYjBjY2NiYTgiLCJleHAiOjE3MDY1ODAzMDYsImlzcyI6ImFsdXJhX2lzc3VlciIsImF1ZCI6ImFsdXJhX3Rlc3Rlc19DIyJ9.McfNidchVAEwEH92Gwteths_OSuQNv93dzdD90Tt1cI
+
+{
+  "id": 1,
+  "periodo": {
+    "dataFinal": "2024-02-08T14:30:00.000"
+  },
+  "preco": 1400.13
+}
