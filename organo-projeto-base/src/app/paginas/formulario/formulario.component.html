@@ -1,0 +1,60 @@
+<section class="cabecalho">
+  <h2>
+    <button routerLink="/lista-livros">
+      Minhas leituras
+    </button>
+    <span class="linha-colorida"></span>
+  </h2>
+</section>
+<section class="formulario">
+  <form [formGroup]="formulario" (ngSubmit)="adicionarLivro()">
+    <h3>Preencha os dados para criar o card do livro</h3>
+    <div class="formulario__input">
+        <label for="titulo">Título</label>
+          <input
+            type="text"
+            placeholder="Digite o título do livro"
+            id="titulo"
+            formControlName="titulo">
+
+          <label for="autoria">Autoria</label>
+          <input
+            type="text"
+            placeholder="Digite a autoria"
+            id="autoria"
+            formControlName="autoria">
+
+          <label for="genero">Gênero</label>
+          <select id="genero" formControlName="genero">
+            <option value="" disabled>Selecione o genêro do livro</option>
+            @for (genero of generos; track genero) {
+
+              <option [value]="genero.id">{{ genero.value }}</option>
+            }
+          </select>
+
+          <label for="dataLeitura">Data da leitura</label>
+          <input
+            type="date"
+            id="dataLeitura"
+            formControlName="dataLeitura">
+
+          <label for="imagem">Imagem</label>
+          <input
+            type="text"
+            placeholder="Informe o endereço da imagem"
+            id="imagem"
+            formControlName="imagem">
+            <section class="classificacao">
+              <label for="classificacao">Classificação</label>
+              <div class="estrelas">
+                <app-avaliacao-estrelas
+                  formControlName="classificacao">
+                </app-avaliacao-estrelas>
+              </div>
+          </section>
+      </div>
+      <button class="btn-submit" type="submit">Criar card</button>
+  </form>
+</section>
+

@@ -1,0 +1,20 @@
+<section class="classificacao">
+  <div class="estrelas">
+      @for (estrela of estrelas; track estrela) {
+        <button
+          type="button"
+          (click)="classificar(estrela)"
+          [class.filled]="classificacao >= estrela">
+        &#9733;
+      </button>
+    }
+  </div>
+</section>
+
+
+
+
+
+
+
+

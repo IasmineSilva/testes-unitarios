@@ -1,0 +1,111 @@
+h2 {
+  font-family: 'Prata';
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 72px;
+  text-align: center;
+  color: #6278F7;
+}
+
+.livros-genero {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:center;
+}
+
+.generos {
+  display: flex;
+  flex-direction: column;
+  padding: 48px 160px;
+}
+
+.generos .linha-colorida {
+  width: 32px;
+  display: block;
+  margin: 0 auto;
+}
+
+.romance {
+  background-color: #E8FFFF;
+}
+
+.generos .romance {
+  border-bottom: 4px solid #82CFFA;
+}
+
+.misterio {
+  background-color: #E9FFE3;
+}
+
+.generos .misterio {
+  border-bottom: 4px solid #A6D157;
+}
+
+.fantasia {
+  background-color: #FFE3E3;
+}
+
+.generos .fantasia {
+  border-bottom: 4px solid #E06B69;
+}
+
+.ficcao-cientifica {
+  background-color: #FFF0FA;
+}
+
+.generos .ficcao-cientifica {
+  border-bottom: 4px solid #DB6EBF;
+}
+
+.tecnicos {
+  background-color: #FFF1E4;
+}
+
+.generos .tecnicos {
+  border-bottom: 4px solid #FF8A29;
+}
+
+h3 {
+  font-family: 'Prata';
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 38px;
+  text-align: center;
+  margin-top: 0;
+}
+
+.cabecalho {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cabecalho button {
+  border: none;
+  cursor: pointer;
+  padding: 16px 20px;
+  background-color: #6278f7;
+  border-radius: 8px;
+  font-family: 'Montserrat';
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 26px;
+  color: #FFF;
+  text-align: left;
+  margin-bottom: 36px;
+}
+
+.cabecalho button i {
+  vertical-align: top;
+}
+
+.cabecalho .linha-colorida {
+  width: 64px;
+  border-bottom: 4px solid #6278F7;
+  display: block;
+  margin: 0 auto;
+}
+
+

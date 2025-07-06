@@ -1,0 +1,15 @@
+<section [ngClass]="livro.genero">
+  <div class="imagem">
+    <img [src]="livro.imagem" [alt]="livro.titulo">
+  </div>
+  <div class="info-livro">
+    <h3>{{ livro.titulo }}</h3>
+    <h4>{{ livro.autoria }}</h4>
+  <h5>
+    <app-avaliacao-estrelas
+      [classificacao]="livro.classificacao">
+    </app-avaliacao-estrelas>
+  </h5>
+    <h6>Lido em {{ livro.dataLeitura | date: 'dd/MM/yyyy'}}</h6>
+  </div>
+</section>

@@ -1,0 +1,192 @@
+.cabecalho {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 24px;
+}
+
+.cabecalho .linha-colorida {
+  width: 64px;
+  border-bottom: 4px solid #6278F7;
+  display: block;
+  margin: 0 auto;
+}
+
+h2 button{
+  font-family: 'Prata';
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 72px;
+  text-align: center;
+  color: #6278F7;
+  text-decoration: none;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.formulario {
+  margin: 80px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.formulario form {
+  width: 782px;
+  height: 855px;
+  background-color: #F2F2F2;
+  border-radius: 20px;
+  padding: 40px;
+  gap: 10px;
+  box-shadow: 8px 8px 16px rgba(0,0,0, 0.08);
+}
+
+.formulario__input label {
+  font-family: var(--font-montserrat);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 22px;
+  color: #212121;
+  align-self: flex-start;
+  padding-left: 44px;
+}
+
+.formulario .classificacao {
+  align-self: flex-start;
+  margin: 0;
+}
+
+.estrelas{
+  align-self: flex-start;
+  padding-left: 44px;
+}
+
+.formulario__input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.formulario__input input, .formulario__input select {
+  font-family: var(--font-montserrat);
+  font-size: 18px;
+  color: #212121;
+  border-radius: 8px;
+  max-width: 702px;
+}
+
+.formulario form input::placeholder {
+  font-family: var(--font-montserrat);
+  font-size: 16px;
+  font-weight: 400;
+  color: #A4A4A4;
+}
+
+select {
+  font-family: var(--font-montserrat);
+  font-size: 16px;
+  font-weight: 400;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url('data:image/svg+xml,\ <svg fill="%23000000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">\<path d="M7 10l5 5 5-5z"></path>\</svg>');
+  background-repeat: no-repeat;
+  background-position: right 8px top 50%;
+}
+
+input[type="date"] {
+  font-family: var(--font-montserrat);
+  font-size: 16px;
+}
+
+.formulario form input,
+.formulario form select {
+  margin-bottom: 20px;
+}
+
+div {
+  margin: 24px 0;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 24px;
+}
+
+input, select {
+  background-color: #FFF;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.06);
+  width: 100%;
+  border: none;
+  font-size: 24px;
+  padding: 24px;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.btn-submit {
+  background-color: #6278f7;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 18px;
+  padding: 24px 32px;
+  border: none;
+  cursor: pointer;
+  color: #FFF;
+  margin: 32px 0;
+  width: 280px;
+  height: 74px;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+}
+
+.btn-submit:hover {
+  color: #95FFD4;
+}
+
+.classificacao {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.classificacao .estrelas {
+  margin: 0;
+}
+
+.estrelas button {
+  padding-right: 4px;
+  padding-left: 0;
+}
+
+.classificacao button {
+  color: gray;
+  font-size: 24px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+}
+
+.classificacao button.filled {
+  color: gold;
+}
+
+h3 {
+  font-family: 'Prata';
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 38px;
+  text-align: left;
+  padding-left: 36px;
+  color: #2E2E2E;
+}
+
+
+
+
+

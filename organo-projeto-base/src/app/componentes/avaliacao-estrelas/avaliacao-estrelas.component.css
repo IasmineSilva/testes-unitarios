@@ -1,0 +1,38 @@
+.estrelas {
+  font-size: 24px;
+  color: gray;
+}
+
+.estrelas.filled {
+  color: gold;
+}
+
+.classificacao {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.classificacao .estrelas {
+  margin: 0;
+}
+
+.estrelas button {
+  padding-right: 4px;
+  padding-left: 0;
+}
+
+.classificacao button {
+  color: gray;
+  font-size: 24px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+}
+
+.classificacao button.filled {
+  color: gold;
+}
+

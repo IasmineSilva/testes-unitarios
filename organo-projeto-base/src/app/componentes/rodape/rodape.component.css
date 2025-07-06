@@ -1,0 +1,7 @@
+.rodape img{
+  max-width: 100%;
+}
+
+.rodape {
+  display: flex;
+}

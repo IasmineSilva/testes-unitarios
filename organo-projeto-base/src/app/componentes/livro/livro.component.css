@@ -1,0 +1,64 @@
+section {
+  width: 262px;
+  height: 418px;
+  margin: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color:  #FFFFFF;
+  border-radius: 8px;
+}
+
+section .imagem {
+  margin-top: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section img {
+  width: 128px;
+  height: 184px;
+  margin-bottom: 20px;
+}
+
+section .info-livro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  overflow: hidden;
+}
+
+section .info-livro > * {
+  margin: 8px;
+}
+
+section .info-livro h3 {
+  font-family: var(--font-montserrat);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 26px;
+  text-align: center;
+  max-width: 90%;
+  min-height: 52px;
+}
+
+section .info-livro h4,
+section .info-livro h6 {
+  font-family: var(--font-montserrat);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: center;
+  color: #2E2E2E;
+}
+
+section .info-livro h5 {
+  margin: 0;
+}
+
+
+
+
+
