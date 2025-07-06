@@ -1,53 +1,61 @@
-import { LivroService } from "./livro.service";
-import { Livro, GeneroLiterario } from "../componentes/livro/livro";
+import { GeneroLiterario, Livro } from "../componentes/livro/livro";
+import { livros } from "../mock-livros";
+import { ErroGeneroLiterario, LivroService } from "./livro.service"
 
 describe('LivroService', () => {
-    let service: LivroService;
-    
-    beforeEach(() => {
-        service = new LivroService();
-    });
+  let service: LivroService;
 
-    it('Deveria ser criado', () => {
-        expect(service).toBeTruthy();
-    });
+  beforeEach(() => {
+    service = new LivroService();
+  })
 
-    it('deveria adicionar um novo livro', () => {
-        const novoLivro: Livro = {
-            titulo: 'Novo Livro',
-            autoria: 'Autor Desconhecido',
-            imagem: 'http://example.com/cover.jpg',
-            genero: { id: 'romance', value: 'Romance' },
-            dataLeitura: '2024-04-19',
-            classificacao: 5
-        };
-        service.adicionarLivro(novoLivro);
-        const livroPorGenero = service.obterLivrosPorGenero('romance');
-        expect(livroPorGenero).toContain(novoLivro);
-    });
+  it('deveria ser criado', () => {
+    expect(service).toBeTruthy();
+  })
 
-    it('Deveria recuperar corretamente os livros por genero', () => {
-        const livros: Livro[] = [
-            {
-                titulo: 'Livro 1',
-                autoria: 'Autor 1',
-                imagem: 'http://example.com/1.jpg',
-                genero: { id: 'romance', value: 'Romance' },
-                dataLeitura: '2024-01-01',
-                classificacao: 4
-            },
-            {
-                titulo: 'Livro 2',
-                autoria: 'Autor 2',
-                imagem: 'http://example.com/2.jpg',
-                genero: { id: 'aventura', value: 'Aventura' },
-                dataLeitura: '2024-02-01',
-                classificacao: 5
-            }
-        ];
-        livros.forEach(livro => service.adicionarLivro(livro));
-        const livroPorGenero = service.obterLivrosPorGenero('romance');
-        const livrosEsperados = livros.filter(livro => livro.genero.id === 'romance');
-        expect(livroPorGenero).toEqual(livrosEsperados);
-    });
-});
+  it('deveria adicionar um novo livro', () => {
+    const novoLivro: Livro = {
+      titulo: 'Novo Livro',
+      autoria: 'Autor Desconhecido',
+      imagem: 'http://example.com/cover.jpg',
+      genero: {id: 'romance', value: 'Romance'},
+      dataLeitura: '2024-04-19',
+      classificacao: 5
+    };
+
+    service.adicionarLivro(novoLivro);
+    const livrosPorGenero = service.obterLivrosPorGenero('romance');
+    expect(livrosPorGenero).toContain(novoLivro);
+  });
+
+  it('deveria recuperar corretamente os livros por gênero', () => {
+    const livrosPorGenero = service.obterLivrosPorGenero('romance');
+    const livrosEsperados = livros.filter(livro => livro.genero.id === 'romance')
+    expect(livrosPorGenero).toEqual(livrosEsperados);
+  });
+
+  it('deveria inicializar os gêneros corretamente', () => {
+    const generosEsperados: GeneroLiterario[] = [
+      { id: 'romance', value: 'Romance' },
+      { id: 'misterio', value: 'Mistério' },
+      { id: 'fantasia', value: 'Fantasia' },
+      { id: 'ficcao-cientifica', value: 'Ficção Científica' },
+      { id: 'tecnicos', value: 'Técnicos' },
+    ];
+
+    expect(service.generos).toEqual(generosEsperados);
+  });
+
+  it('deveria lançar um erro ao tentar cadastrar um livro com gênero desconhecido', () => {
+    const novoLivro: Livro = {
+      titulo: 'Novo Livro',
+      autoria: 'Autor Desconhecido',
+      imagem: 'http://example.com/cover.jpg',
+      genero: {id: 'nao-existe', value: 'Não Existe'},
+      dataLeitura: '2024-04-19',
+      classificacao: 5
+    };
+
+    expect(() => service.adicionarLivro(novoLivro)).toThrow(ErroGeneroLiterario);
+  })
+})
