@@ -1,0 +1,24 @@
+<header class="app-header">
+  <mat-toolbar>
+    <a routerLink="/">
+      <img src="assets/imagens/logo.png" alt="Logo da aplicação Jornada">
+    </a>
+    <button class="menu-button" (click)="toggleMenu()" *ngIf="isMobile">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <div class="links-toolbar" *ngIf="showMenu || !isMobile">
+      <button mat-button routerLink="/vender-milhas">Vender milhas</button>
+      <button mat-button routerLink="/sobre">Sobre</button>
+      <ng-container *ngIf="user$ | async as pessoaUsuaria; else login">
+        <a routerLink="/perfil">
+          <img src="assets/icones/user.png" alt="Ícone da pessoa usuária">
+        </a>
+        <button mat-stroked-button color="primary" (click)="logout()">SAIR</button>
+      </ng-container>
+      <ng-template #login>
+        <button routerLink="/cadastro" mat-raised-button color="primary">CADASTRE-SE</button>
+        <button routerLink="/login" mat-stroked-button>LOGIN</button>
+      </ng-template>
+    </div>
+  </mat-toolbar>
+</header>
